@@ -15,13 +15,26 @@ export const Home = () => {
       <form action="">
         <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
-          <TaskInput id="task" placeholder="Dê um nome para o seu projeto" />
+          <TaskInput
+            id="task"
+            list="taks-suggestions"
+            placeholder="Dê um nome para o seu projeto"
+          />
+
+          <datalist id="taks-suggestions">
+            <option value="Projeto 1"></option>
+            <option value="Projeto 2"></option>
+            <option value="Banana"></option>
+          </datalist>
 
           <label htmlFor="minutesAmunt">durante</label>
           <MinutesAmountInput
             id="minutesAmunt"
             type="number"
             placeholder="00"
+            step={5}
+            min={5}
+            max={60}
           />
 
           <span>minutos.</span>
