@@ -24,7 +24,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   height: 56px;
 
   background-color: ${(props) =>
-    props.theme.primary};
+    props.theme['green-500']};
 
   /* ${(props) => {
     return css`
