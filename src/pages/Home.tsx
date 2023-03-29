@@ -3,6 +3,7 @@ import { Button } from '../components/Button';
 // Theme
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '../styles/themes/default';
+import { GlobalStyle } from '../styles/global';
 
 export const Home = () => {
   return (
@@ -12,6 +13,8 @@ export const Home = () => {
       <Button variant='success' />
       <Button variant='warning' />
       <Button variant='danger' />
+
+      <GlobalStyle />
     </ThemeProvider>
   );
 };
