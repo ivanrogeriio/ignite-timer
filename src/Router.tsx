@@ -9,14 +9,17 @@ import { Home } from './pages/Home'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
+import { DefaultLayout } from './layouts/DefaultLayout'
 
 export const Router = () => {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/history" element={<History />} />
+          <Route path="/" element={<DefaultLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/history" element={<History />} />
+          </Route>
         </Routes>
         <GlobalStyle />
       </ThemeProvider>
