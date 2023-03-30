@@ -35,6 +35,7 @@ interface Cycle {
 export const Home = () => {
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activatedCycleId, setActivatedCycleId] = useState<string | null>(null)
+  const [ammountSecondPast, setAmmountSecondPast] = useState(0)
 
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleValidationSchema),
@@ -64,7 +65,14 @@ export const Home = () => {
 
   const activeCycle = cycles.find((cycle) => cycle.id === activatedCycleId)
 
-  console.log(activeCycle)
+  const totalSeconds = activeCycle ? activeCycle.minutes * 60 : 0
+  const currentSeconds = activeCycle ? totalSeconds - ammountSecondPast : 0
+
+  const minutesAmount = Math.floor(currentSeconds / 60)
+  const secondsAmount = currentSeconds % 60
+
+  const minutes = String(minutesAmount).padStart(2, '0')
+  const seconds = String(secondsAmount).padStart(2, '0')
 
   return (
     <HomeContainer>
@@ -97,11 +105,11 @@ export const Home = () => {
         </FormContainer>
 
         <CountdownContainer>
-          <span>0</span>
-          <span>0</span>
+          <span>{minutes[0]}</span>
+          <span>{minutes[1]}</span>
           <Separator>:</Separator>
-          <span>0</span>
-          <span>0</span>
+          <span>{seconds[0]}</span>
+          <span>{seconds[1]}</span>
         </CountdownContainer>
 
         <StartCountdownButton disabled={!isSubmitDisabled} type="submit">
