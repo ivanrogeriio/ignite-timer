@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import {
   CountdownContainer,
@@ -16,6 +16,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 
+import { differenceInSeconds } from 'date-fns'
+
 const newCycleValidationSchema = zod.object({
   task: zod.string().min(1, 'Informe a tarefa'),
   minutesAmount: zod
@@ -29,7 +31,8 @@ type NewCycleFormData = zod.infer<typeof newCycleValidationSchema>
 interface Cycle {
   id: string
   task: string
-  minutes: number
+  minutesAmount: number
+  startDate: Date
 }
 
 export const Home = () => {
@@ -51,7 +54,8 @@ export const Home = () => {
     const newCycle: Cycle = {
       id,
       task: data.task,
-      minutes: data.minutesAmount,
+      minutesAmount: data.minutesAmount,
+      startDate: new Date(),
     }
 
     setCycles((state) => [...state, newCycle])
@@ -61,11 +65,21 @@ export const Home = () => {
     reset()
   }
 
-  const isSubmitDisabled = watch('task')
-
   const activeCycle = cycles.find((cycle) => cycle.id === activatedCycleId)
 
-  const totalSeconds = activeCycle ? activeCycle.minutes * 60 : 0
+  useEffect(() => {
+    if (activeCycle) {
+      setInterval(() => {
+        setAmmountSecondPast(
+          differenceInSeconds(new Date(), activeCycle.startDate),
+        )
+      }, 1000)
+    }
+  }, [activeCycle])
+
+  const isSubmitDisabled = watch('task')
+
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
   const currentSeconds = activeCycle ? totalSeconds - ammountSecondPast : 0
 
   const minutesAmount = Math.floor(currentSeconds / 60)
