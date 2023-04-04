@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { useContext } from 'react'
 
 import {
   HomeContainer,
@@ -42,11 +42,17 @@ export const Home = () => {
 
   const { handleSubmit, watch, reset } = newCycleForm
 
+  function handleCreateNewCycle(data: NewCycleFormData) {
+    createNewCycle(data)
+
+    reset()
+  }
+
   const isSubmitDisabled = watch('task')
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(createNewCycle)} action="">
+      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
