@@ -18,7 +18,7 @@ interface CycleContextData {
   cycles: Cycle[]
   activeCycle: Cycle | undefined
   activatedCycleId: string | null
-  ammountSecondPast: number
+  amountSecondPast: number
   markCurrentCycleAsFinished: () => void
   sendSetAmmountSecondPastToHook: (seconds: number) => void
   createNewCycle: (data: CreateCycleData) => void
@@ -36,7 +36,7 @@ export const CyclesContextProvider = ({
 }: CyclesContextProviderProps) => {
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activatedCycleId, setActivatedCycleId] = useState<string | null>(null)
-  const [ammountSecondPast, setAmmountSecondPast] = useState(0)
+  const [amountSecondPast, setAmmountSecondPast] = useState(0)
 
   const activeCycle = cycles.find((cycle) => cycle.id === activatedCycleId)
 
@@ -95,7 +95,7 @@ export const CyclesContextProvider = ({
         cycles,
         activeCycle,
         activatedCycleId,
-        ammountSecondPast,
+        amountSecondPast,
         markCurrentCycleAsFinished,
         sendSetAmmountSecondPastToHook,
         createNewCycle,

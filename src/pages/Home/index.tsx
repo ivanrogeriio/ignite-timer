@@ -11,7 +11,7 @@ import { HandPalm, Play } from '@phosphor-icons/react'
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { NewCycleForm } from './components/NewCycleForm'
-import { CountDown } from './components/Countdown'
+import { Countdown } from './components/Countdown'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -57,7 +57,7 @@ export const Home = () => {
           <NewCycleForm />
         </FormProvider>
 
-        <CountDown />
+        <Countdown />
 
         {activeCycle ? (
           <StopCountdownButton onClick={interruptCurrentCycle} type="button">
