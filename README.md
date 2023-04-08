@@ -2,7 +2,7 @@
 <img width="1920" alt="ignite-timer-banner" src="https://user-images.githubusercontent.com/62813966/230705925-8a4d9e92-9f67-4b50-a639-9507acd16794.png">
 
 # Descrição
-O Ignite Timer é uma aplicação que possuí difersas features e bibliotecas. Para o desenvolvimento da aplicação, utilizamos o Vite e para estilizar usamos o Styled Component, com seu conceito de CSS-in-JS. Configuramos também um ESlint para facilitar e padronizar o código. E para validar formulários usamos o React Hook Form com o Zod. Fora isso, temos o uso de Context API, Reducers com o Hook nativo do React.
+Uma aplicação que possuí diversas features e bibliotecas. Para o desenvolvimento da aplicação, utilizamos o Vite e para estilizar usamos o Styled Component, com seu conceito de CSS-in-JS. Configuramos também um ESlint para facilitar e padronizar o código. E para validar formulários usamos o React Hook Form com o Zod. Fora isso, temos o uso de Context API, Reducers com o Hook nativo do React.
 
 
 ## Baixar o projeto
