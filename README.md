@@ -36,6 +36,6 @@ Abaixo você encontra as seguintes tecnologias, linguagens e ferramentas utiliza
 <a href="https://styled-components.com/"><img src="https://img.shields.io/static/v1?label=&message=Styled Components&color=161b22&style=for-the-badge&logo=styled-components"/></a>\
 <a href="https://react-hook-form.com/"><img src="https://img.shields.io/static/v1?label=&message=React Rook Form&color=161b22&style=for-the-badge&logo=reacthookform"/></a>\
 <a href="https://zod.dev/"><img src="https://img.shields.io/static/v1?label=&message=ZOD&color=161b22&style=for-the-badge&logo=zotero"/></a>\
-<a href="https://styled-components.com/"><img src="https://img.shields.io/static/v1?label=&message=Immer&color=161b22&style=for-the-badge&logo=immer"/></a>\
+<a href="https://immerjs.github.io/immer/"><img src="https://img.shields.io/static/v1?label=&message=Immer&color=161b22&style=for-the-badge&logo=immer"/></a>\
 <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/static/v1?label=&message=Typescript&color=161b22&style=for-the-badge&logo=typescript"/></a>\
 <a href="https://www.figma.com/"><img src="https://img.shields.io/static/v1?label=&message=Figma&color=161b22&style=for-the-badge&logo=figma"/></a>
